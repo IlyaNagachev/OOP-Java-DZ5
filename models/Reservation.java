@@ -13,6 +13,8 @@ public class Reservation {
 
     private String name;
 
+    private String customerName;
+
     public Reservation(Table table, Date date, String name) {
         id = ++counter;
         this.table = table;
@@ -36,4 +38,12 @@ public class Reservation {
         return table;
     }
 
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 }

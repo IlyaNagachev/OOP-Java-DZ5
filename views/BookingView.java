@@ -46,8 +46,4 @@ public class BookingView implements View {
         }
     }
 
-    public void changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name){
-
-    }
-
 }

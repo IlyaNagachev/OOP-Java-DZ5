@@ -28,4 +28,5 @@ public class Table {
         return String.format(Locale.getDefault(), "Столик #%d", no);
     }
 
+
 }

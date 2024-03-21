@@ -10,6 +10,8 @@ public class TableService implements Model {
 
     private Collection<Table> tables;
 
+
+
     @Override
     public Collection<Table> loadTables() {
         if (tables == null) {
@@ -36,4 +38,19 @@ public class TableService implements Model {
         }
         throw new RuntimeException("Некорректный номер столика");
     }
+
+    @Override
+    public int changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String customerName) {
+        for (Table table : tables) {
+            for (Reservation reservation : table.getReservations()) {
+                if (reservation.getId() == oldReservation) {
+                    reservation.setDate(reservationDate);
+                    reservation.setCustomerName(customerName);
+                    return reservation.getId();
+                }
+            }
+        }
+        throw new RuntimeException("Некорректный номер столика");
+    }
+
 }
